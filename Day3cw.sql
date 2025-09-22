@@ -1,10 +1,16 @@
-INSERT INTO student(Name,Age,Department,Grade)
-VALUES( 'Tina', 22, 'Physics', 89),('Dev', 19, 'Computer Science', 85),( 'Anu', 20, 'Physics', 90),( 'Luke', 24, 'Zoology', 70); 
-SELECT* FROM student
-WHERE age>20;
-SELECT* FROM student
-WHERE  Department IN ('Physics','Computer Science');
-SELECT* FROM student
-WHERE grade = 90;
-SELECT* FROM student
-WHERE grade BETWEEN 70 AND 90;
+INSERT INTO products_table(id,name,category,price,in_stock)
+VALUES ('Phone','Electronics',60000,'Yes'),
+('Headset','Electronics',450,'Yes'),
+('Jeans','Cloths',1000,'No'),
+('Chair','Furniture',5000,'No'),
+('Shoes','Footwear',1500,'Yes');
+
+SELECT DISTINCT category FROM products_table;
+
+SELECT * FROM products_table WHERE in_stock = 'Yes' AND price < 500;
+
+SELECT * FROM products_table WHERE in_stock = 'No' OR price > 1000;
+
+SELECT name, price FROM products_table ORDER BY price DESC;
+
+SELECT name, price * 1.18 AS 'price_with_tax' FROM products_table;
