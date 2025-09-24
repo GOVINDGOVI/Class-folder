@@ -16,6 +16,6 @@ FROM mobiles;
 SELECT SUM(stock)
 FROM mobiles;
 
-SELECT MAX(price)
-FROM mobiles
+SELECT* FROM mobiles
+order by price DESC
 LIMIT 2;
